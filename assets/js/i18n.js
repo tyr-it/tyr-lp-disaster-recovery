@@ -233,7 +233,7 @@
       'ct.success.p': 'Retornamos em até 1 dia útil. Obrigado pelo contato!',
 
       /* ── FOOTER ── */
-      'foot.desc': 'TYR — IT Innovation Technology. Protegendo o futuro do seu negócio contra o imprevisível. Parceiro Oficial Acronis.',
+      'foot.desc': 'Proteção essencial para o seu negócio. Segurança, infraestrutura e continuidade com 20+ anos de expertise.',
       'foot.solutions': 'Soluções',
       'foot.s1': 'Segurança',
       'foot.s2': 'Proteção M365',
@@ -440,7 +440,7 @@
       'ct.form.privacy': 'Reply within 1 business day · No commitment · Dedicated specialist',
       'ct.success.h3': 'Message sent!',
       'ct.success.p': 'We will get back to you within 1 business day. Thank you for your contact!',
-      'foot.desc': 'TYR — IT Innovation Technology. Protecting the future of your business against the unpredictable. Official Acronis Partner.',
+      'foot.desc': 'Essential protection for your business. Security, infrastructure and continuity with 20+ years of expertise.',
       'foot.solutions': 'Solutions',
       'foot.s1': 'Security',
       'foot.s2': 'M365 Protection',
@@ -645,7 +645,7 @@
       'ct.form.privacy': 'Respuesta en hasta 1 día hábil · Sin compromiso · Especialista dedicado',
       'ct.success.h3': '¡Mensaje enviado!',
       'ct.success.p': 'Le responderemos en hasta 1 día hábil. ¡Gracias por su contacto!',
-      'foot.desc': 'TYR — IT Innovation Technology. Protegiendo el futuro de su negocio contra lo imprevisible. Partner Oficial Acronis.',
+      'foot.desc': 'Protección esencial para su negocio. Seguridad, infraestructura y continuidad con 20+ años de experiencia.',
       'foot.solutions': 'Soluciones',
       'foot.s1': 'Seguridad',
       'foot.s2': 'Protección M365',
