@@ -409,11 +409,28 @@
       .cf-row{grid-template-columns:1fr}
       .form-row{grid-template-columns:1fr}
     }
+
+    /* ── STICKY CTA ── */
+    .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(11,15,20,.97);border-top:1px solid rgba(193,18,31,.4);backdrop-filter:blur(16px);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1)}
+    .sticky-cta.show{transform:translateY(0)}
+    .sticky-cta-text{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sticky-cta-text span{color:var(--primary)}
+    .sticky-cta-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:4px;line-height:1;flex-shrink:0}
+    .sticky-cta-close:hover{color:var(--fg)}
+    @media(max-width:600px){.sticky-cta-text{font-size:12px}.btn-sticky{padding:10px 16px;font-size:13px}}
   </style>
 </head>
 <body>
 
 <!-- HEADER -->
+
+<!-- STICKY CTA BAR -->
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-cta-text" data-i18n-html="sticky.text">Sua operação pode parar a qualquer momento. <span>Você está protegido?</span></div>
+  <a href="#download" class="btn btn-primary btn-sticky" style="padding:10px 22px;font-size:14px;flex-shrink:0" data-i18n="sticky.btn" onclick="document.getElementById('sticky-cta').classList.remove('show')">Receber Material Grátis</a>
+  <button class="sticky-cta-close" onclick="this.parentElement.classList.remove('show');this.parentElement.style.display='none'" aria-label="Fechar">✕</button>
+</div>
+
 <header>
   <div class="container">
     <div class="hdr">
@@ -427,7 +444,7 @@
           <button onclick="setLang('es')" id="lang-es">ES</button>
         </div>
         <span class="hdr-partner btn-hdr-dl">
-          <img src="assets/images/acronis-gold.webp" alt="Acronis Gold Partner" height="30">
+          <img src="assets/images/acronis-gold-2.webp" alt="Acronis Gold Partner" height="30">
         </span>
         <a href="#fale-conosco" class="btn btn-outline" style="padding:10px 18px;font-size:13px" data-i18n="hdr.contact">💬 Fale com Especialista</a>
         <a href="#download" class="btn btn-primary" style="padding:10px 18px;font-size:13px" data-i18n="hdr.download">⬇ Baixar Apresentação</a>
@@ -447,7 +464,7 @@
             <span class="dot"></span>
             <span data-i18n="hero.badge">Parceiro Oficial Acronis · Disaster Recovery</span>
           </div>
-          <h1 data-i18n="hero.h1">A Arquitetura da<br><span class="text-blue">Resiliência Moderna</span></h1>
+          <h1 data-i18n="hero.h1">Sua operação caiu.<br><span class="text-blue">Você tem 15 minutos para voltar.</span></h1>
           <p data-i18n="hero.p">Seu sistema caiu. Incêndio, ransomware, falha humana — não importa a causa. <strong>O que importa é quanto tempo sua empresa pode ficar parada.</strong> A resposta correta é: menos de 15 minutos.</p>
           <div class="hero-ctas">
             <a href="#download" class="btn btn-primary btn-lg" data-i18n="hero.cta1">⬇ Baixar Apresentação Completa</a>
@@ -456,7 +473,7 @@
           <div class="hero-stats">
             <div>
               <div class="stat-val">&lt;<span>15</span>min</div>
-              <div class="stat-lbl" data-i18n="hero.stat1.lbl">RTO — Tempo de recuperação</div>
+              <div class="stat-lbl" data-i18n="hero.stat1.lbl">De volta em até 15 min</div>
             </div>
             <div>
               <div class="stat-val">&lt;<span>15</span>min</div>
@@ -464,7 +481,7 @@
             </div>
             <div>
               <div class="stat-val"><span>1</span> clique</div>
-              <div class="stat-lbl" data-i18n="hero.stat3.lbl">Failover automático</div>
+              <div class="stat-lbl" data-i18n="hero.stat3.lbl">Recuperação com 1 clique</div>
             </div>
             <div>
               <div class="stat-val"><span>4,93</span>/5</div>
@@ -661,6 +678,47 @@
   </div>
 </div>
 
+
+<!-- BENEFÍCIOS -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div style="text-align:center;max-width:640px;margin:0 auto 48px">
+      <div class="section-label section-label-center" data-i18n="ben.label">O que muda para você</div>
+      <h2 style="font-size:clamp(24px,3vw,40px);font-weight:800;margin-bottom:12px" data-i18n-html="ben.h2">O que <span class="text-red">Muda</span> para o Seu Negócio</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px">
+      <div style="display:flex;gap:20px;background:linear-gradient(160deg,var(--card2),var(--bg));border:1px solid var(--border);border-radius:var(--radius);padding:32px">
+        <div style="width:52px;height:52px;border-radius:12px;background:rgba(193,18,31,.15);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">🛡️</div>
+        <div>
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:8px" data-i18n="ben.b1.h3">Operação não para</h3>
+          <p style="font-size:14px;color:var(--muted);line-height:1.7" data-i18n="ben.b1.p">Mesmo diante de ransomware, falha de servidor ou desastre, sua equipe continua trabalhando. Clientes não percebem, contratos não são quebrados.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:20px;background:linear-gradient(160deg,var(--card2),var(--bg));border:1px solid var(--border);border-radius:var(--radius);padding:32px">
+        <div style="width:52px;height:52px;border-radius:12px;background:rgba(193,18,31,.15);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">😌</div>
+        <div>
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:8px" data-i18n="ben.b2.h3">Decisor dorme tranquilo</h3>
+          <p style="font-size:14px;color:var(--muted);line-height:1.7" data-i18n="ben.b2.p">O plano de recuperação já existe, já foi testado e já está ativo. Quando o pior acontecer, você não precisa improvisar.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:20px;background:linear-gradient(160deg,var(--card2),var(--bg));border:1px solid var(--border);border-radius:var(--radius);padding:32px">
+        <div style="width:52px;height:52px;border-radius:12px;background:rgba(193,18,31,.15);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">✅</div>
+        <div>
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:8px" data-i18n="ben.b3.h3">Conformidade garantida</h3>
+          <p style="font-size:14px;color:var(--muted);line-height:1.7" data-i18n="ben.b3.p">LGPD, contratos de SLA, normas ISO — sua empresa mantém os compromissos mesmo em situações de crise.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:20px;background:linear-gradient(160deg,var(--card2),var(--bg));border:1px solid var(--border);border-radius:var(--radius);padding:32px">
+        <div style="width:52px;height:52px;border-radius:12px;background:rgba(193,18,31,.15);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">💰</div>
+        <div>
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:8px" data-i18n="ben.b4.h3">Custo previsível</h3>
+          <p style="font-size:14px;color:var(--muted);line-height:1.7" data-i18n="ben.b4.p">Sem surpresas financeiras. Mensalidade fixa, sem investimento inicial em hardware. Proteção enterprise ao custo de uma apólice de seguro.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- A SOLUÇÃO -->
 <section class="section grid-bg">
   <div class="container">
@@ -674,18 +732,18 @@
       <div class="sol-card">
         <div class="sol-num" data-i18n="sol.p1.num">Pilar 01</div>
         <div class="sol-icon">⚡</div>
-        <h3 data-i18n="sol.p1.h3">Continuidade Automática (Failover)</h3>
+        <h3 data-i18n="sol.p1.h3">Sua operação continua — mesmo quando o servidor para</h3>
         <p data-i18n="sol.p1.p">Se o seu servidor físico falhar, o núcleo na nuvem assume o controle automaticamente, mantendo seus sistemas no ar — em minutos, não em horas. Seus colaboradores continuam trabalhando como se nada tivesse acontecido.</p>
         <ul class="sol-bullets">
           <li data-i18n="sol.p1.l1">Ativação automática sem intervenção manual</li>
-          <li data-i18n="sol.p1.l2">RTO inferior a 15 minutos</li>
+          <li data-i18n="sol.p1.l2">De volta em menos de 15 minutos</li>
           <li data-i18n="sol.p1.l3">Transparente para usuários finais</li>
         </ul>
       </div>
       <div class="sol-card">
         <div class="sol-num" data-i18n="sol.p2.num">Pilar 02</div>
         <div class="sol-icon">📋</div>
-        <h3 data-i18n="sol.p2.h3">Planos de Ação Automatizados (Runbooks)</h3>
+        <h3 data-i18n="sol.p2.h3">Um plano de crise pronto antes do problema acontecer</h3>
         <p data-i18n="sol.p2.p">São dados e ações combinadas que definem exatamente como o ambiente da sua empresa se recupera em cada cenário. É como ter um gestor de crise especializado disponível 24/7, pronto para agir em milissegundos.</p>
         <ul class="sol-bullets">
           <li data-i18n="sol.p2.l1">Sequência de recuperação pré-definida</li>
@@ -696,7 +754,7 @@
       <div class="sol-card">
         <div class="sol-num" data-i18n="sol.p3.num">Pilar 03</div>
         <div class="sol-icon">🔒</div>
-        <h3 data-i18n="sol.p3.h3">Conexão Segura e Transparente (VPN)</h3>
+        <h3 data-i18n="sol.p3.h3">Seu time trabalha normalmente mesmo em crise</h3>
         <p data-i18n="sol.p3.p">Mesmo com os sistemas rodando na nuvem de recuperação, seus funcionários continuam trabalhando normalmente. Uma VPN transparente conecta as estações de trabalho ao ambiente de DR sem qualquer configuração adicional.</p>
         <ul class="sol-bullets">
           <li data-i18n="sol.p3.l1">Acesso transparente para colaboradores</li>
@@ -707,21 +765,21 @@
       <div class="sol-card">
         <div class="sol-num" data-i18n="sol.p4.num">Pilar 04</div>
         <div class="sol-icon">⏱️</div>
-        <h3 data-i18n="sol.p4.h3">Máquina do Tempo (Point-in-Time Recovery)</h3>
+        <h3 data-i18n="sol.p4.h3">Volte para antes do ataque acontecer</h3>
         <p data-i18n="sol.p4.p">Volte para qualquer minuto ou hora específica do passado. Se um ransomware criptografou seus dados hoje às 14h, você pode restaurar o estado exato das 13h50 — antes da infecção — com poucos cliques.</p>
         <ul class="sol-bullets">
-          <li data-i18n="sol.p4.l1">RPO inferior a 15 minutos</li>
-          <li data-i18n="sol.p4.l2">Snapshots contínuos e granulares</li>
+          <li data-i18n="sol.p4.l1">Perde no máximo 15 minutos de dados — nunca mais</li>
+          <li data-i18n="sol.p4.l2">Cópias automáticas a cada minuto</li>
           <li data-i18n="sol.p4.l3">Restauração cirúrgica sem perda de dados recentes</li>
         </ul>
       </div>
       <div class="sol-card">
         <div class="sol-num" data-i18n="sol.p5.num">Pilar 05</div>
         <div class="sol-icon">☁️</div>
-        <h3 data-i18n="sol.p5.h3">Nuvem Flexível e Econômica (OPEX)</h3>
+        <h3 data-i18n="sol.p5.h3">Sem grandes investimentos iniciais — pague só o que usa</h3>
         <p data-i18n="sol.p5.p">Diferente dos modelos antigos que exigiam grandes investimentos em servidores de destino (CAPEX), nossa solução funciona em modelo de assinatura. Você paga apenas pelo que usa, eliminando gastos iniciais elevados.</p>
         <ul class="sol-bullets">
-          <li data-i18n="sol.p5.l1">Sem CAPEX — modelo OPEX previsível</li>
+          <li data-i18n="sol.p5.l1">Sem comprar servidores reserva — pague como serviço</li>
           <li data-i18n="sol.p5.l2">Escala conforme sua necessidade</li>
           <li data-i18n="sol.p5.l3">Infraestrutura global Acronis</li>
         </ul>
@@ -802,7 +860,7 @@
         </div>
         <div class="partner-plus">+</div>
         <div class="partner-logo-acronis">
-          <img src="assets/images/acronis-logo.webp" alt="Acronis" height="52" loading="lazy">
+          <img src="assets/images/acronis-gold-partner.webp" alt="Acronis" height="52" loading="lazy">
         </div>
       </div>
 
@@ -962,11 +1020,11 @@
             <div class="cc-value">+55 (11) 3588-0777</div>
           </div>
         </a>
-        <a href="mailto:contato@tyr.com.br" class="contact-card">
+        <a href="/cdn-cgi/l/email-protection#167579786277627956626f643875797b387464" class="contact-card">
           <div class="cc-icon">✉️</div>
           <div>
             <div class="cc-title">E-mail</div>
-            <div class="cc-value">contato@tyr.com.br</div>
+            <div class="cc-value"><span class="__cf_email__" data-cfemail="64070b0a1005100b24101d164a070b094a0616">[email&#160;protected]</span></div>
           </div>
         </a>
         <a href="https://tyr.digital" target="_blank" class="contact-card">
@@ -1044,7 +1102,7 @@
         <h4 data-i18n="foot.contact">Contato</h4>
         <ul>
           <li><a href="tel:+551135880777">+55 (11) 3588-0777</a></li>
-          <li><a href="mailto:contato@tyr.com.br">contato@tyr.com.br</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#b9dad6d7cdd8cdd6f9cdc0cb97dad6d497dbcb"><span class="__cf_email__" data-cfemail="50333f3e2431243f102429227e333f3d7e3222">[email&#160;protected]</span></a></li>
           <li><a href="https://tyr.digital" target="_blank">tyr.digital</a></li>
           <li><a href="privacidade.html" data-i18n="foot.privacy">Política de Privacidade</a></li>
         </ul>
@@ -1071,10 +1129,10 @@
 <!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeLightbox()">
   <span id="lightbox-close" onclick="closeLightbox()">×</span>
-  <img id="lightbox-img" src="" alt="Infográfico DR">
+  <img id="lightbox-img" src="assets/images/infografico-dr.webp" alt="Infográfico DR">
 </div>
 
-<script src="assets/js/i18n.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/i18n.js"></script>
 <script>
   /* ─── STICKY CTA ─── */
   const stickyCta = document.getElementById('sticky-cta');
@@ -1207,6 +1265,18 @@
   function loadHeroVideo(el) {
     el.innerHTML = '<iframe src="https://www.youtube.com/embed/iOjQRoEERXY?autoplay=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';
   }
+
+  // Sticky CTA bar
+  (function(){
+    var bar = document.getElementById('sticky-cta');
+    if(!bar) return;
+    var heroH = window.innerHeight;
+    window.addEventListener('scroll', function(){
+      if(bar.style.display === 'none') return;
+      bar.classList.toggle('show', window.scrollY > heroH * 0.8);
+    }, {passive:true});
+  })();
+
 </script>
 </body>
 </html>
