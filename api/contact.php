@@ -39,28 +39,24 @@ if ($new) fputcsv($fp, ['data','nome','sobrenome','email','telefone','mensagem']
 fputcsv($fp, [date('Y-m-d H:i:s'), $nome, $sobrenome, $email, $tel, $mensagem]);
 fclose($fp);
 
-// E-mail interno
-$to = 'contato@tyr.com.br';
-$subject = '[DR LP] Fale Conosco — ' . $nome . ' <' . $email . '>';
-$msg = "Nova mensagem via LP Disaster Recovery\n\n";
-$msg .= "Nome: $nome $sobrenome\n";
-$msg .= "E-mail: $email\n";
-$msg .= "Telefone: $tel\n";
-$msg .= "Mensagem:\n$mensagem\n";
-$msg .= "\nData: " . date('d/m/Y H:i:s');
-$headers = "From: noreply@tyr.digital\r\nReply-To: $email\r\nX-Mailer: TYR-DR-LP";
-@mail($to, $subject, $msg, $headers);
-
-// Auto-resposta
-$conf_subject = 'Recebemos sua mensagem — TYR Disaster Recovery';
-$conf_msg = "Olá, $nome!\n\n";
-$conf_msg .= "Recebemos sua mensagem e um especialista TYR retornará em até 1 dia útil.\n\n";
-$conf_msg .= "Enquanto isso, você pode baixar nossa apresentação sobre Disaster Recovery:\n";
-$conf_msg .= "https://tyr.digital/lp/disaster-recovery/assets/docs/apresentacao-dr.pdf\n\n";
-$conf_msg .= "Ou nos chame diretamente pelo WhatsApp:\n";
-$conf_msg .= "https://wa.me/551135880777\n\n";
-$conf_msg .= "Atenciosamente,\nEquipe TYR\ncontato@tyr.com.br | +55 (11) 3588-0777";
-$conf_headers = "From: TYR — IT Innovation Technology <noreply@tyr.digital>\r\nX-Mailer: TYR-DR-LP";
-@mail($email, $conf_subject, $conf_msg, $conf_headers);
+// E-mail de notificação para a TYR
+$to      = 'contato@tyr.com.br';
+$subject = "=?UTF-8?B?" . base64_encode("Fale Conosco — Disaster Recovery — $nome $sobrenome") . "?=";
+$msg     = "Nova mensagem via LP Disaster Recovery:\n\n"
+         . "Nome:     $nome $sobrenome\n"
+         . "E-mail:   $email\n"
+         . "Telefone: " . ($tel ?: '(não informado)') . "\n\n"
+         . "Mensagem:\n$mensagem\n\n"
+         . "Data/Hora: " . date('d/m/Y H:i:s') . " (UTC)\n"
+         . "IP: " . ($_SERVER['REMOTE_ADDR'] ?? 'desconhecido') . "\n\n"
+         . "---\n"
+         . "TYR — Landing Page Disaster Recovery\n"
+         . "https://tyr.digital/lp/disaster-recovery";
+$headers  = "From: Site TYR <contato.tyr@vivasol.com.br>\r\n";
+$headers .= "Reply-To: $email\r\n";
+$headers .= "MIME-Version: 1.0\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers .= "Content-Transfer-Encoding: 8bit\r\n";
+mail($to, $subject, $msg, $headers);
 
 echo json_encode(['ok'=>true,'message'=>'Message received']);
