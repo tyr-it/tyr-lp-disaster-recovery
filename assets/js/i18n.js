@@ -156,7 +156,7 @@
       'seg.cta': 'Fale com um Especialista →',
 
       /* ── STICKY CTA ── */
-      'sticky.text': 'Sua operação pode parar a qualquer momento. <span>Você está protegido?</span>',
+      'sticky.text': 'Sua operação pode parar a qualquer momento. <span style="color:var(--primary)">Você está protegido?</span>',
       'sticky.btn': 'Receber Material Grátis',
 
       /* ── PARCERIA ── */
@@ -188,7 +188,6 @@
       'tyr.v5.desc': 'Estratégia sem improvisos, soluções estruturadas.',
       'tyr.v6.name': 'Empatia',
       'tyr.v6.desc': 'O diferencial humano — entendemos as dores do seu negócio.',
-      'sticky.btn2': 'Fale com Especialista',
 
       /* ── DOWNLOAD ── */
       'dl.label': 'Material Gratuito',
@@ -213,7 +212,7 @@
       'dl.form.email.err': 'Use um e-mail corporativo (sem gmail, hotmail, outlook...)',
       'dl.form.tel': 'Telefone',
       'dl.form.btn': '⬇ Baixar Apresentação Gratuita',
-      'dl.form.privacy': '🔒 Seus dados estão seguros. Lemos nossa Política de Privacidade.',
+      'dl.form.privacy': '🔒 Seus dados estão seguros. Consulte nossa <a href="https://tyr.digital/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a>.',
       'dl.success.h3': 'Apresentação enviada!',
       'dl.success.p': 'Verifique seu e-mail. Em caso de dúvidas, fale conosco pelo WhatsApp.',
 
@@ -247,7 +246,6 @@
       'foot.partner': 'Parceiro Oficial Acronis · Disaster Recovery as a Service',
 
       /* ── STICKY ── */
-      'sticky.text': 'Sua empresa pode se recuperar em menos de 15 minutos?',
       'sticky.btn1': '⬇ Baixar Apresentação',
       'sticky.btn2': 'Falar com Especialista',
 
@@ -441,7 +439,7 @@
       'dl.form.email.err': 'Please use a corporate email (no gmail, hotmail, outlook...)',
       'dl.form.tel': 'Phone',
       'dl.form.btn': '⬇ Download Free Presentation',
-      'dl.form.privacy': '🔒 Your data is safe. See our Privacy Policy.',
+      'dl.form.privacy': '🔒 Your data is safe. See our <a href="https://tyr.digital/politica-de-privacidade/" target="_blank" rel="noopener">Privacy Policy</a>.',
       'dl.success.h3': 'Presentation sent!',
       'dl.success.p': 'Check your email. If you have questions, contact us on WhatsApp.',
       'ct.label': 'Contact Us',
@@ -469,7 +467,7 @@
       'foot.privacy': 'Privacy Policy',
       'foot.copy': '© 2026 TYR — IT Innovation Technology. All rights reserved.',
       'foot.partner': 'Official Acronis Partner · Disaster Recovery as a Service',
-      'sticky.text': 'Can your business recover in less than 15 minutes?',
+      'sticky.text': 'Can your business recover in less than <span style="color:var(--primary)">15 minutes</span>?',
       'sticky.btn1': '⬇ Download Presentation',
       'sticky.btn2': 'Talk to a Specialist',
 
@@ -495,7 +493,7 @@
       'mf.privacy': 'Sus datos se quedan con nosotros. Sin spam, sin compartir.',
       'mf.err.email': 'Por favor, use un correo corporativo.',
       'hero.badge': 'Partner Oficial Acronis · Disaster Recovery',
-      'hero.h1': 'Tu operación cayó.<br><span class="text-blue">Tienes 15 minutos para recuperarte.</span>',
+      'hero.h1': 'Su operación cayó.<br><span class="text-blue">Tiene 15 minutos para recuperarse.</span>',
       'hero.p': 'Su sistema cayó. Incendio, ransomware, error humano — la causa no importa. <strong>Lo que importa es cuánto tiempo puede estar paralizada su empresa.</strong> La respuesta correcta es: menos de 15 minutos.',
       'hero.cta1': '⬇ Descargar Presentación Completa',
       'hero.cta2': 'Hablar con Especialista',
@@ -555,7 +553,7 @@
       'sol.h2': '5 Pilares que <span class="text-blue">Protegen</span> su Negocio',
       'sol.p': 'Nuestra solución de Disaster Recovery combina automatización, inteligencia y gestión especializada para garantizar que su operación nunca se detenga por más de 15 minutos.',
       'sol.p1.num': 'Pilar 01',
-      'sol.p1.h3': 'Tu operación continúa — incluso cuando el servidor falla',
+      'sol.p1.h3': 'Su operación continúa — incluso cuando el servidor falla',
       'sol.p1.p': 'Si su servidor físico falla, el núcleo en la nube toma el control automáticamente, manteniendo sus sistemas en funcionamiento — en minutos, no en horas.',
       'sol.p1.l1': 'Activación automática sin intervención manual',
       'sol.p1.l2': 'De vuelta en menos de 15 minutos',
@@ -567,19 +565,19 @@
       'sol.p2.l2': 'Testeable sin interrumpir producción',
       'sol.p2.l3': 'Documentación automática de cada etapa',
       'sol.p3.num': 'Pilar 03',
-      'sol.p3.h3': 'Tu equipo trabaja con normalidad incluso en crisis',
+      'sol.p3.h3': 'Su equipo trabaja con normalidad incluso en crisis',
       'sol.p3.p': 'Incluso con los sistemas funcionando en la nube de recuperación, sus empleados continúan trabajando normalmente. Una VPN transparente conecta las estaciones al entorno DR sin configuración adicional.',
       'sol.p3.l1': 'Acceso transparente para colaboradores',
       'sol.p3.l2': 'Comunicación cifrada de extremo a extremo',
       'sol.p3.l3': 'Sin VPN manual por usuario',
       'sol.p4.num': 'Pilar 04',
-      'sol.p4.h3': 'Vuelve al estado anterior al ataque',
+      'sol.p4.h3': 'Vuelva al estado anterior al ataque',
       'sol.p4.p': 'Regrese a cualquier minuto u hora específica del pasado. Si un ransomware cifró sus datos, puede restaurar el estado exacto de antes de la infección con pocos clics.',
-      'sol.p4.l1': 'Pierdes como máximo 15 minutos de datos',
+      'sol.p4.l1': 'Pierde como máximo 15 minutos de datos',
       'sol.p4.l2': 'Copias automáticas cada minuto',
       'sol.p4.l3': 'Restauración quirúrgica sin perder datos recientes',
       'sol.p5.num': 'Pilar 05',
-      'sol.p5.h3': 'Sin grandes inversiones iniciales — paga solo lo que usas',
+      'sol.p5.h3': 'Sin grandes inversiones iniciales — pague solo lo que usa',
       'sol.p5.p': 'A diferencia de los modelos antiguos que requerían grandes inversiones en servidores destino (CAPEX), nuestra solución funciona en modelo de suscripción, eliminando costos iniciales elevados.',
       'sol.p5.l1': 'Sin servidores de reserva — paga como servicio',
       'sol.p5.l2': 'Escala según su necesidad',
@@ -663,7 +661,7 @@
       'dl.form.email.err': 'Use un correo corporativo (sin gmail, hotmail, outlook...)',
       'dl.form.tel': 'Teléfono',
       'dl.form.btn': '⬇ Descargar Presentación Gratuita',
-      'dl.form.privacy': '🔒 Sus datos están seguros. Consulte nuestra Política de Privacidad.',
+      'dl.form.privacy': '🔒 Sus datos están seguros. Consulte nuestra <a href="https://tyr.digital/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidad</a>.',
       'dl.success.h3': '¡Presentación enviada!',
       'dl.success.p': 'Revise su correo. Si tiene preguntas, contáctenos por WhatsApp.',
       'ct.label': 'Contáctenos',
@@ -691,7 +689,7 @@
       'foot.privacy': 'Política de Privacidad',
       'foot.copy': '© 2026 TYR — IT Innovation Technology. Todos los derechos reservados.',
       'foot.partner': 'Partner Oficial Acronis · Disaster Recovery as a Service',
-      'sticky.text': '¿Su empresa puede recuperarse en menos de 15 minutos?',
+      'sticky.text': '¿Su empresa puede recuperarse en menos de <span style="color:var(--primary)">15 minutos</span>?',
       'sticky.btn1': '⬇ Descargar Presentación',
       'sticky.btn2': 'Hablar con Especialista',
 
