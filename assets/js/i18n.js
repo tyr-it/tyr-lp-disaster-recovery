@@ -250,6 +250,10 @@
       'sticky.text': 'Sua empresa pode se recuperar em menos de 15 minutos?',
       'sticky.btn1': '⬇ Baixar Apresentação',
       'sticky.btn2': 'Falar com Especialista',
+
+      /* ── FENRIR ── */
+      'fenrir.label': 'O Lobo e o Guardião',
+      'fenrir.text': 'Na mitologia nórdica, Fenrir era o lobo que ameaçava destruir tudo — até que Týr se interpôs, sacrificando a própria mão para acorrentá-lo. No mundo digital, o lobo tem outro nome: ransomware, phishing, espionagem industrial. Ele circula em silêncio, esperando o momento certo. A TYR é o único que não recua.',
     },
 
     en: {
@@ -468,6 +472,10 @@
       'sticky.text': 'Can your business recover in less than 15 minutes?',
       'sticky.btn1': '⬇ Download Presentation',
       'sticky.btn2': 'Talk to a Specialist',
+
+      /* ── FENRIR ── */
+      'fenrir.label': 'The Wolf and the Guardian',
+      'fenrir.text': 'In Norse mythology, Fenrir was the wolf that threatened to destroy everything — until Týr stepped in, sacrificing his own hand to bind it. In the digital world, the wolf has another name: ransomware, phishing, industrial espionage. It prowls in silence, waiting for the right moment. TYR is the one that never backs down.',
     },
 
     es: {
@@ -686,6 +694,10 @@
       'sticky.text': '¿Su empresa puede recuperarse en menos de 15 minutos?',
       'sticky.btn1': '⬇ Descargar Presentación',
       'sticky.btn2': 'Hablar con Especialista',
+
+      /* ── FENRIR ── */
+      'fenrir.label': 'El Lobo y el Guardián',
+      'fenrir.text': 'En la mitología nórdica, Fenrir era el lobo que amenazaba con destruirlo todo — hasta que Týr intervino, sacrificando su propia mano para encadenarlo. En el mundo digital, el lobo tiene otro nombre: ransomware, phishing, espionaje industrial. Circula en silencio, esperando el momento justo. TYR es el único que no retrocede.',
     }
   };
 

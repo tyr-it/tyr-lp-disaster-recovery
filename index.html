@@ -298,6 +298,10 @@
     .infog-btn{display:flex;align-items:center;gap:10px;background:rgba(11,15,20,.85);color:#fff;padding:14px 24px;border-radius:100px;font-weight:600;font-size:14px;backdrop-filter:blur(10px)}
 
     /* ── FULLSCREEN LIGHTBOX ── */
+    .fenrir-callout{margin:32px 0;background:linear-gradient(160deg,rgba(11,15,20,.97),rgba(20,24,32,.97));border:1px solid rgba(100,120,150,.25);border-left:3px solid rgba(140,155,175,.5);border-radius:var(--radius);padding:24px 28px;position:relative}
+    .fenrir-callout::after{content:'🐺';font-size:2rem;position:absolute;top:18px;right:24px;opacity:.25;line-height:1}
+    .fenrir-callout .fenrir-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);display:block;margin-bottom:10px}
+    .fenrir-callout p{font-size:.92rem;color:var(--muted);line-height:1.75;font-style:italic;margin:0}
     #lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(0,0,0,.92);align-items:center;justify-content:center;padding:20px}
     #lightbox.open{display:flex}
     #lightbox img{max-width:100%;max-height:90vh;border-radius:var(--radius);object-fit:contain}
@@ -545,8 +549,10 @@
 </section>
 
 <!-- O QUE É UM DESASTRE -->
-<section class="section">
-  <div class="container">
+<section class="section" id="risco" style="position:relative;overflow:hidden">
+  <img src="assets/images/wolf-fenrir.webp" alt="" aria-hidden="true"
+    style="position:absolute;left:0;top:0;width:60%;height:100%;object-fit:cover;object-position:right center;opacity:0.20;pointer-events:none;z-index:0;filter:grayscale(15%)">
+  <div class="container" style="position:relative;z-index:1">
     <div class="section-label" data-i18n="prob.label">O Problema</div>
     <h2 style="font-size:clamp(28px,3vw,44px);font-weight:800;max-width:720px;margin-bottom:16px" data-i18n="prob.h2">O que é um <span class="text-red">'Desastre'</span> no Século 21?</h2>
     <p style="font-size:17px;color:var(--muted);max-width:640px;line-height:1.7" data-i18n="prob.p">Ameaças vão muito além de incêndios ou inundações. <strong style="color:var(--fg)">Qualquer evento que paralise suas operações é um desastre para o seu negócio.</strong></p>
@@ -577,6 +583,12 @@
     <div class="disaster-footer">
       <p data-i18n="prob.footer"><span>Qualquer evento que paralise suas operações</span> é um desastre para o seu negócio.</p>
     </div>
+
+    <div class="fenrir-callout">
+      <span class="fenrir-label" data-i18n="fenrir.label">O Lobo e o Guardião</span>
+      <p data-i18n="fenrir.text">Na mitologia nórdica, Fenrir era o lobo que ameaçava destruir tudo — até que Týr se interpôs, sacrificando a própria mão para acorrentá-lo. No mundo digital, o lobo tem outro nome: ransomware, phishing, espionagem industrial. Ele circula em silêncio, esperando o momento certo. A TYR é o único que não recua.</p>
+    </div>
+
   </div>
 </section>
 
@@ -705,6 +717,7 @@
       </div>
       <div>
         <form class="mf-form" id="mini-form" onsubmit="submitMiniForm(event)">
+          <input type="text" name="website" id="hp-mini" style="display:none" tabindex="-1" autocomplete="off">
           <input type="text" id="mf-nome" data-i18n-ph="mf.ph.nome" placeholder="Seu nome *" required>
           <input type="text" id="mf-empresa" data-i18n-ph="mf.ph.empresa" placeholder="Empresa *" required>
           <input type="email" id="mf-email" data-i18n-ph="mf.ph.email" placeholder="E-mail corporativo * (sem gmail, hotmail...)" required>
@@ -1007,6 +1020,7 @@
           <h3 data-i18n="dl.form.h3">Receba agora, gratuitamente</h3>
           <p class="form-sub" data-i18n="dl.form.sub">Preencha com seu e-mail corporativo para receber o material.</p>
           <form onsubmit="submitDownloadForm(event)" id="download-form">
+            <input type="text" name="website" id="hp-download" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-row">
               <div class="form-group">
                 <label data-i18n="dl.form.nome">Nome <span class="req">*</span></label>
@@ -1034,7 +1048,7 @@
               <span data-i18n="dl.form.btn">⬇ Baixar Apresentação Gratuita</span>
             </button>
           </form>
-          <p class="privacy-note" data-i18n="dl.form.privacy">🔒 Seus dados estão seguros. Lemos nossa <a href="https://tyr.digital/politica-de-privacidade/" target="_blank" target="_blank">Política de Privacidade</a>.</p>
+          <p class="privacy-note" data-i18n="dl.form.privacy">🔒 Seus dados estão seguros. Lemos nossa <a href="https://tyr.digital/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a>.</p>
         </div>
         <div id="form-success">
           <div style="font-size:48px;margin-bottom:16px">✅</div>
@@ -1094,6 +1108,7 @@
       <div class="contact-form-card">
         <h3 data-i18n="ct.form.h3">Envie uma mensagem</h3>
         <form id="contact-form" onsubmit="submitContactForm(event)">
+          <input type="text" name="website" id="hp-contact" style="display:none" tabindex="-1" autocomplete="off">
           <div id="contact-form-inner">
             <div class="cf-row">
               <div class="cf-group">
@@ -1232,7 +1247,7 @@
       await fetch('api/download.php', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({nome, empresa, email, source: 'mini-form'})
+        body: JSON.stringify({nome, empresa, email, source: 'mini-form', website: document.getElementById('hp-mini').value})
       });
     } catch(_) {}
 
@@ -1268,7 +1283,7 @@
       await fetch('api/download.php', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({nome, sobrenome, empresa, email, tel, source: 'download-form'})
+        body: JSON.stringify({nome, sobrenome, empresa, email, tel, source: 'download-form', website: document.getElementById('hp-download').value})
       });
     } catch(_) {}
 
@@ -1304,7 +1319,7 @@
       await fetch('api/contact.php', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({nome, sobrenome, email, tel, mensagem: msg})
+        body: JSON.stringify({nome, sobrenome, email, tel, mensagem: msg, website: document.getElementById('hp-contact').value})
       });
     } catch(_) {}
 
