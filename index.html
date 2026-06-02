@@ -470,6 +470,12 @@
     .sticky-cta-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:4px;line-height:1;flex-shrink:0}
     .sticky-cta-close:hover{color:var(--fg)}
     @media(max-width:600px){.sticky-cta-text{font-size:12px}.btn-sticky{padding:10px 16px;font-size:13px}}
+    .bc-bar{background:rgba(20,24,32,.6);border-bottom:1px solid var(--border);padding:10px 0;font-size:.8rem;color:var(--muted)}
+    .bc-inner{display:flex;align-items:center;gap:8px;max-width:1180px;margin:0 auto;padding:0 24px;flex-wrap:wrap}
+    .bc-bar a{color:var(--muted);transition:color .2s;text-decoration:none}
+    .bc-bar a:hover{color:var(--fg)}
+    .bc-sep{color:var(--border);user-select:none}
+    .bc-current{color:var(--primary);font-weight:600}
   </style>
 </head>
 <body>
@@ -485,6 +491,16 @@
   </div>
   <button class="sticky-cta-close" onclick="this.parentElement.classList.remove('show');this.parentElement.style.display='none'" aria-label="Fechar">✕</button>
 </div>
+
+<nav class="bc-bar" aria-label="Breadcrumb">
+  <div class="bc-inner">
+    <a href="https://tyr.digital" data-i18n="bc.home">tyr.digital</a>
+    <span class="bc-sep" aria-hidden="true">›</span>
+    <a href="https://tyr.digital/solucoes/backup" data-i18n="bc.backup">Backup</a>
+    <span class="bc-sep" aria-hidden="true">›</span>
+    <span class="bc-current" data-i18n="bc.current">Disaster Recovery</span>
+  </div>
+</nav>
 
 <header>
   <div class="container">
